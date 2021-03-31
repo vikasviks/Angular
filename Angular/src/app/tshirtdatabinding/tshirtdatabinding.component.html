@@ -1,0 +1,20 @@
+
+<div class ="title"><h1>{{title}}</h1></div>
+<div class ="ipnumber1">
+<input type="number" [(ngModel)]='a'><br/>
+<br>
+
+<input type="number" [(ngModel)]='b'><br/>
+</div>
+
+<hr>
+<h3 style="text-align: center;">Hower on Image to See Back of T-Shirt</h3>
+
+
+<div class="img">
+<!-- <img src="./assets/a.jpg"  [style.height.px]='a'[style.width.px]='b'/>
+<button (click)='SetDefault()'>Click Me</button> -->
+<img [src]="imgSource" (mouseenter)='changeTshirtMouseEnter()' 
+(mouseleave)="changeTshirtMouseExit()" [style.height.px]='a'[style.width.px]='b' />
+</div>
+<hr>
