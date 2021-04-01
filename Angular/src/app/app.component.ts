@@ -6,53 +6,52 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = "Angular";
-  showDataBindingDemo=true;
-  showDirectiveDemo=false;
-  showProductsTable=false;
-
-  showdbdemo():void{
-    this.showDataBindingDemo=true;
-    this.showDirectiveDemo=false;
-    this.showProductsTable=false;
-  }
-
-  showdirectivedemo():void{
-    this.showDirectiveDemo=true;
-    this.showDataBindingDemo=false;
-    this.showProductsTable=false;
-  }
-   
-  showProducts():void{
-    this.showProductsTable=true;
-    this.showDataBindingDemo=false;
-    this.showDirectiveDemo=false;
-  }
-
-
-// a = 300;
-// b = 300;
-// imgSource = '../assets/front.jpg';
- 
-// changeTshirtMouseEnter()
-// {
-//   this.imgSource = '../assets/back.jpg';
-// }
-// changeTshirtMouseExit():void
- 
-// {
-//   this.imgSource = '../assets/front.jpg';
-// }
-
-
-
-  // setchange():void{
-  //   this.ht=100;
-  //   this.wt=100;
+  title = 'Angular App';
+  // a=100;
+  // b=200;
+  // setWidth():void{
+  //   this.a = 100;
+  //   this.b = 200;
   // }
-
-  // Onmouse():void{
-  //   this.ht=100;
-  //   this.wt=100;
+  // Title = 'Choose T-shirt';
+  // Height = 300;
+  // Width = 300;
+  // imgSource = '../assets/front.jpg';
+  // ChangeTshirtMouseEnter():void{
+  //   this.imgSource='../assets/back.jpg';
   // }
+  // ChangeTshirtMouseExit():void{
+  //   this.imgSource = '../assets/front.jpg'
+  isbindingvisivle = true;
+  issdvisible = false;
+  showProductTable=false;
+  showPurchase= false;
+  
+  showDemo():void{
+    this.isbindingvisivle = true;
+    this.issdvisible = false;   
+    this.showProductTable=false;
+    this.showPurchase = false;
+  }
+ 
+  showdirectiveDemoFunction(): void{
+    this.isbindingvisivle= false;
+    this.showProductTable=false;
+    this.issdvisible = true;
+    this.showPurchase = false;
+  }
+ 
+  showProductsTable(): void{
+    this.isbindingvisivle = false;
+    this.issdvisible = false;
+    this.showProductTable = true;
+    this.showPurchase = false;
+  }
+  MasterDetailsFunction(): void{
+    this.isbindingvisivle= false;
+    this.showProductTable=false;
+    this.issdvisible = false;
+    this.showPurchase = true;
+  }
 }
+

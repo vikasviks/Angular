@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {IProduct} from './IProduct';
+import {IProduct} from './Iproduct';
 
 @Component({
   selector: 'app-product',
@@ -8,15 +8,13 @@ import {IProduct} from './IProduct';
 })
 export class ProductComponent implements OnInit {
 
+  products: IProduct[] = [];
 
-  products:IProduct[]=[];
-  constructor() { 
-
-  }
+  constructor() { }
 
   ngOnInit(): void {
-   this.products=this.getProducts();
-   console.log(this.products);
+    this.products = this.getProducts();
+    console.log(this.products);
   }
 
   getProducts(): IProduct[]{
@@ -27,7 +25,7 @@ export class ProductComponent implements OnInit {
         Price : 500,
         ExpiryDate: "10-08-1999",
         isInStock: true,
-        Quantity: 78
+        Quantity: 100
       },
       {
         Id: 2,
@@ -35,7 +33,7 @@ export class ProductComponent implements OnInit {
         Price : 20,
         ExpiryDate: "19-06-1999",
         isInStock: true,
-        Quantity: 106
+        Quantity: 90
       },
       {
         Id: 3,
@@ -43,7 +41,7 @@ export class ProductComponent implements OnInit {
         Price : 1500,
         ExpiryDate: "20-01-2012",
         isInStock: false,
-        Quantity: 99
+        Quantity: 105
       },
       {
         Id: 4,
@@ -51,18 +49,17 @@ export class ProductComponent implements OnInit {
         Price : 1500,
         ExpiryDate: "10-02-1999",
         isInStock: true,
-        Quantity: 108
+        Quantity: 85
       },
       {
         Id: 5,
         Title : "Pencil",
-        Price : 250,
+        Price : 2500,
         ExpiryDate: "22-09-2001",
         isInStock: false,
-        Quantity: 65
+        Quantity: 110
       }
     ]
   }
- 
-}
 
+}

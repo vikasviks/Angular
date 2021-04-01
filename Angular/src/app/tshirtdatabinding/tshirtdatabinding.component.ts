@@ -11,46 +11,21 @@ export class TshirtdatabindingComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  title = "Data Binding Demo";
-  showDataBindingDemo=true;
-  showDirectiveDemo=false;
-  
-  showdbdemo():void{
-    this.showDataBindingDemo=true;
-    this.showDirectiveDemo=false;
+  title = 'Data-Binding-Demo';
+  a=100;
+  b=200;
+  setWidth():void{
+    this.a = 100;
+    this.b = 200;
   }
-
-  showdirectivedemo():void{
-    this.showDirectiveDemo=true;
-    this.showDataBindingDemo=false;
+  Title = 'Choose T-shirt';
+  Height = 300;
+  Width = 300;
+  imgSource = '../assets/front.jpg';
+  ChangeTshirtMouseEnter():void{
+    this.imgSource='../assets/back.jpg';
   }
-
-
-
-a = 300;
-b = 300;
-imgSource = '../assets/front.jpg';
- 
-changeTshirtMouseEnter()
-{
-  this.imgSource = '../assets/back.jpg';
+  ChangeTshirtMouseExit():void{
+    this.imgSource = '../assets/front.jpg'
 }
-changeTshirtMouseExit():void
- 
-{
-  this.imgSource = '../assets/front.jpg';
-}
-
-
-
-  // setchange():void{
-  //   this.ht=100;
-  //   this.wt=100;
-  // }
-
-  // Onmouse():void{
-  //   this.ht=100;
-  //   this.wt=100;
-  // }
-
 }
