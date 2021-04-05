@@ -1,57 +1,66 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular App';
-  // a=100;
-  // b=200;
-  // setWidth():void{
-  //   this.a = 100;
-  //   this.b = 200;
-  // }
-  // Title = 'Choose T-shirt';
-  // Height = 300;
-  // Width = 300;
-  // imgSource = '../assets/front.jpg';
-  // ChangeTshirtMouseEnter():void{
-  //   this.imgSource='../assets/back.jpg';
-  // }
-  // ChangeTshirtMouseExit():void{
-  //   this.imgSource = '../assets/front.jpg'
-  isbindingvisivle = true;
-  issdvisible = false;
-  showProductTable=false;
-  showPurchase= false;
-  
-  showDemo():void{
-    this.isbindingvisivle = true;
-    this.issdvisible = false;   
-    this.showProductTable=false;
-    this.showPurchase = false;
+  showDataBindingDemo=true;
+  showDirectiveDemo=false;
+  showproductcomponent=false;
+  showpurchasecomponent=false;
+  showinput1component=false;
+  showinput2component=false;
+
+  showdbdemo():void
+  {
+    this.showDataBindingDemo=true;
+    this.showproductcomponent=false;
+    this.showDirectiveDemo=false;
+    this.showinput1component=false;
+    this.showinput2component=false;
+    this.showpurchasecomponent=false;
   }
- 
-  showdirectiveDemoFunction(): void{
-    this.isbindingvisivle= false;
-    this.showProductTable=false;
-    this.issdvisible = true;
-    this.showPurchase = false;
+
+  showProduct():void{
+    this.showDataBindingDemo=false;
+    this.showproductcomponent=true;
+    this.showDirectiveDemo=false;
+    this.showpurchasecomponent=false;
+    this.showinput1component=false;
+    this.showinput2component=false;
   }
- 
-  showProductsTable(): void{
-    this.isbindingvisivle = false;
-    this.issdvisible = false;
-    this.showProductTable = true;
-    this.showPurchase = false;
+
+  showdirectivedemo():void{
+    this.showDataBindingDemo=false;
+    this.showDirectiveDemo=true;
+    this.showproductcomponent=false;
+    this.showpurchasecomponent=false;
+    this.showinput1component=false;
+    this.showinput2component=false;
+
   }
-  MasterDetailsFunction(): void{
-    this.isbindingvisivle= false;
-    this.showProductTable=false;
-    this.issdvisible = false;
-    this.showPurchase = true;
+
+  showpurchasedemo(): void
+  {
+    this.showpurchasecomponent=true;
+    this.showDataBindingDemo=false;
+    this.showDirectiveDemo=false;
+    this.showproductcomponent=false;
+    this.showinput1component=false;
+    this.showinput2component=false;
+
+  }
+
+  showinputdata():void
+  {
+    this.showpurchasecomponent=false;
+    this.showDataBindingDemo=false;
+    this.showDirectiveDemo=false;
+    this.showproductcomponent=false;
+    this.showinput1component=true;
+    this.showinput2component=true;
   }
 }
-

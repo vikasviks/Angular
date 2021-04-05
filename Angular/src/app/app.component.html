@@ -1,62 +1,103 @@
- <!-- <h1>Hello</h1>
-<button (Click) = 'setWidth()'[style.height.px]='a'[style.width.px]='b'>Click Me</button>
-<img src = "../assets/a.png"[style.height.px]='a'[style.width.px]='b'>
-<input type ="number"[(ngModel)] = 'a'then/> -->
-<!-- <div class="row">
-  <div clas="col-md-4">
-
-  </div>
-  <div class = "col-md-4">
-    <img(mouseenter)='ChangeTshirtMouseEnter()' (mouseLeave) = 'ChangeTshirtMouseExit()'
-    [src]='imgSource' [style.height.px]='height'
-    [style.width.px]='width'
-    class = "img img-fluid"/>
-  </div>
-  <div class= "col-md-4">
-
-  </div>
-</div> -->
-<!-- <div>
-  <div class = "row">
-    <div class = "col-md-2"></div>
-      <div class = "col-md-4"><h1>{{title}}</h1></div>
-      <div class = "col-md-2"></div>
-</div>
-<div></div>
-<input type = "number" [(ngModel)] =Height>
-<input type = "number" [(ngModel)] = Width>
-<br>
-<br>
-<img  (mouseleave)='ChangeTshirtMouseExit()' (mouseenter)='ChangeTshirtMouseEnter()' 
-[src]='imgSource' [style.height.px]='Height' [style.width.px]='Width'> -->
-
-
-
-<div class = "container">
-  <h1 class = "text-center">{{title}}</h1>
-  <br>
-  <div class="row">
-    <div class = "col-md-3">
-      <button (click) ='showDemo()' class = "btn btn-danger" > Data Binding Demo </button>
-    </div>
-
-
-    <div class="col-md-3">
-      <button (click)='showdirectiveDemoFunction()' class= "btn btn-warning"> Structural Directive Demo</button>
-    </div>
-    <div class="col-md-3">
-      <button (click)=' showProductsTable()' class="btn btn-warning">Product List</button>
-    </div>
-    <div class="col-md-3">
-      <button (click)=' MasterDetailsFunction()' class="btn btn-info">Master Details</button>
-    </div>
-  </div>
-  <hr/>
-  <br>
-  <div class="col-md-12">
-    <app-tshirtdatabinding *ngIf = "isbindingvisivle"></app-tshirtdatabinding>
-    <app-hello *ngIf="issdvisible"></app-hello>
-    <app-product *ngIf ="showProductTable"></app-product>
-    <app-purchase *ngIf ="showPurchase"></app-purchase>
+<div class="container">
+  <div>
+    <span>
+  
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+      <a class="navbar-brand"  routerLink='/Home'>Vikas</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
     
- 
+      <!-- DataBinding -->
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+      
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/Tshirt' >Data Binding</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/Product' >Product</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link "  routerLink='/Purchase'>Master Details</a>
+          </li>
+    
+          <li class="nav-item">
+            <a class="nav-link"  routerLink='/attribute' >Attribute Directive</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"   routerLink='/sharedatawithservice' >Shared Data with Service</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link"   routerLink='/globalerrorhandling' >Generate Error</a>
+          </li>
+        </ul>
+       
+      </div>
+    </nav>
+  </span>
+    </div>
+    <router-outlet></router-outlet>
+</div>
+
+
+<!-- <div class="container"> -->
+
+<!-- <button class="btn btn-info" style="margin-left: 450px; margin-top: 10px; margin-bottom: 50px;">Master Details</button> -->
+
+  <!-- <div class="row">
+    <div class="col-md-3">
+      <button routerLink='/Tshirt' class="btn btn-danger"> Data Binding demo</button>
+    </div>
+
+    
+      <div class="col-md-3">
+        <button routerLink='/Product'  class="btn btn-warning"> Product data</button>
+      </div>
+      
+
+    
+    <div class="col-md-3">
+      <button routerLink='/attribute'   class="btn btn-warning"> Attribute Directive demo</button>
+    </div>
+
+    <div class="col-md-3">
+      <button  routerLink='/Purchase'   class="btn btn-info"> master details</button>
+    </div>
+
+
+     <div class="col-md-3">
+      <button routerLink='/sharedatawithservice' class="btn btn-warning"> Share data</button>
+    </div>  -->
+
+    <!-- <div class="col-md-3">
+      <button  (click)='showpurchaseorderdemo()'  class="btn btn-warning"> Purchase-order</button>
+    </div> -->
+
+
+  <!-- </div>
+
+  <hr> -->
+
+
+  <!-- <div class="row">
+    <div class="col-md-12"> -->
+
+    <!-- <app-tshirtdatabinding *ngIf="showDataBindingDemo"></app-tshirtdatabinding>
+<app-structuredirective *ngIf="showDirectiveDemo"></app-structuredirective>
+<app-product *ngIf="showproductcomponent"></app-product>
+<app-purchase *ngIf=" showpurchasecomponent"></app-purchase>  -->
+<!-- <app-purchase-order *ngIf=" showpurchaseordercomponent"></app-purchase-order> -->
+
+<!-- 
+<app-input1 *ngif="showinput1component"></app-input1>
+<app-input2 *ngif="showinput2component"></app-input2> -->
+
+
+  <!-- </div>
+</div> -->
+<!-- </div> -->

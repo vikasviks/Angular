@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HelloComponent } from './hello.component';
+import { ErrorhandlingComponent } from './errorhandling.component';
 
-describe('HelloComponent', () => {
-  let component: HelloComponent;
-  let fixture: ComponentFixture<HelloComponent>;
+describe('ErrorhandlingComponent', () => {
+  let component: ErrorhandlingComponent;
+  let fixture: ComponentFixture<ErrorhandlingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HelloComponent ]
+      declarations: [ ErrorhandlingComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HelloComponent);
+    fixture = TestBed.createComponent(ErrorhandlingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

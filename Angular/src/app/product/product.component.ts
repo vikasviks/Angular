@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {IProduct} from './Iproduct';
+import { DataService } from '../data.service';
+import { MyErrorhandlerService } from '../my-errorhandler.service';
+import { IProduct } from './Iproduct';
 
 @Component({
   selector: 'app-product',
@@ -8,58 +10,70 @@ import {IProduct} from './Iproduct';
 })
 export class ProductComponent implements OnInit {
 
-  products: IProduct[] = [];
 
-  constructor() { }
+  color='red';
+   products: IProduct[] = [];
+  constructor(private handleerror:MyErrorhandlerService, private dataservice: DataService) { }
 
   ngOnInit(): void {
-    this.products = this.getProducts();
-    console.log(this.products);
+      this.products=this.dataservice.getProducts();
   }
 
-  getProducts(): IProduct[]{
-    return[
-      {
-        Id: 1,
-        Title : "Bat",
-        Price : 500,
-        ExpiryDate: "10-08-1999",
-        isInStock: true,
-        Quantity: 100
-      },
-      {
-        Id: 2,
-        Title : "Ball",
-        Price : 20,
-        ExpiryDate: "19-06-1999",
-        isInStock: true,
-        Quantity: 90
-      },
-      {
-        Id: 3,
-        Title : "Stumps",
-        Price : 1500,
-        ExpiryDate: "20-01-2012",
-        isInStock: false,
-        Quantity: 105
-      },
-      {
-        Id: 4,
-        Title : "Pen",
-        Price : 1500,
-        ExpiryDate: "10-02-1999",
-        isInStock: true,
-        Quantity: 85
-      },
-      {
-        Id: 5,
-        Title : "Pencil",
-        Price : 2500,
-        ExpiryDate: "22-09-2001",
-        isInStock: false,
-        Quantity: 110
-      }
-    ]
-  }
+  
 
+  // getProducts(): IProduct[]
+  // {
+  //   return[
+
+  //    {
+  //     Id:1,
+  //     Title:"Pen",
+  //     Price:20,
+  //     ExpiryDate:"19-2-2020",
+  //     isInstock:true,
+  //     Quantity:70
+  
+  //    },
+
+  //    {
+  //     Id:2,
+  //     Title:"Pencil",
+  //     Price:10,
+  //     ExpiryDate:"01-5-2035",
+  //     isInstock:false,
+  //     Quantity:120
+  
+  //    },
+
+  //    {
+  //     Id:3,
+  //     Title:"Notebook",
+  //     Price:50,
+  //     ExpiryDate:"12-12-2025",
+  //     isInstock:true,
+  //     Quantity:90
+  
+  //    },
+
+  //    {
+  //     Id:4,
+  //     Title:"Eraser",
+  //     Price:10,
+  //     ExpiryDate:"02-11-2022",
+  //     isInstock:true,
+  //     Quantity:80
+  
+  //    },
+
+  //    {
+  //     Id:5,
+  //     Title:"Bag",
+  //     Price:70,
+  //     ExpiryDate:"7-2-2025",
+  //     isInstock:false,
+  //     Quantity:125;
+  
+  //    },
+  //   ]
+  // }
 }

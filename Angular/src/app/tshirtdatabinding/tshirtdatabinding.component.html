@@ -1,14 +1,50 @@
+<div class="container">
 
-    <div class = "row">
-      <div class = "col-md-2"></div>
-        <div class = "col-md-2"><h2>{{title}}</h2></div>
-        <div class = "col-md-2"></div>
+  <h1 class="text-center">{{title}}</h1> <br>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+
+    <div class="col-md-3">
+      <input type="numberod" [(ngModel)]=a><br><br>
+    </div>
+
+    <div class="col-md-4">
+      <input type="number" [(ngModel)]=b><br><br>
+    </div>
+
+    <div class="col-md-2">
+    </div>
+
   </div>
-  <div></div>
-  <input type = "number" [(ngModel)] =Height>
-  <input type = "number" [(ngModel)] = Width>
+
+  <hr>
   <br>
-  <br>
-  <img class="img" (mouseleave)='ChangeTshirtMouseExit()' (mouseenter)='ChangeTshirtMouseEnter()' 
-  [src]='imgSource' [style.height.px]='Height' [style.width.px]='Width'>
-  
+
+  <div class="row">
+    <div class="col=md-4">
+    </div>
+
+  </div>
+
+<div class="text-center">
+  <div class="col=md-4" >
+    <img (mouseenter)="changefront()" [src]='imgsource' (mouseleave)="changeback()" [style.width.px]='a'
+      [style.height.px]='b' style="height: 300px;  width: 300px;">
+
+      <br>
+      <br>
+      <div class="text-center">
+      <button class="btn btn-info" (click)='setDefault()' >Default Size</button>
+      </div>
+  </div>
+</div>
+
+</div>
+<br>
+<br>
+
+<p class="text-center" style="color: blue;">In This example of Data Binding, we have provided two input fields for enter height and width of an image <br>
+  by changeing the vaues, the size of image will change respectively, and when we hover mouse on image, back of t-shirt image can be seen.
+</p>
