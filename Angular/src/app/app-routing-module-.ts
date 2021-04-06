@@ -5,6 +5,7 @@ import { ErrorhandlingComponent } from './errorhandling/errorhandling.component'
 import { HomeComponent } from './home/home.component';
 import { Input1Component } from './input1/input1.component';
 import { Input2Component } from './input2/input2.component';
+import { LoginComponent } from './login/login.component';
 import { ProductComponent } from './product/product.component';
 import { PurchaseComponent } from './purchase/purchase.component';
 import { ShareDataComponent } from './sd.component';
@@ -12,7 +13,7 @@ import { ShareDataComponent } from './sd.component';
 import { TshirtdatabindingComponent } from './tshirtdatabinding/tshirtdatabinding.component';
 const routes: Routes = [
     {
-        path: '',redirectTo:'Tshirt-UI',pathMatch:'full'
+        path: '',redirectTo:'Home',pathMatch:'full'
     },
 
     {
@@ -48,6 +49,9 @@ const routes: Routes = [
         path: 'globalerrorhandling',
         component:ErrorhandlingComponent,
     },
+    {path:'login',
+    component:LoginComponent,    
+}
 
 
 

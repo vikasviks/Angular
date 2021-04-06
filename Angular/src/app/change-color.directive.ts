@@ -14,7 +14,7 @@ export class ChangeColorDirective {
   }
 
   @HostListener ('click') foo(){
-    alert('hello');
+    alert('Hello From Alert!');
   }
 
   @HostListener ('mouseenter') vik(){

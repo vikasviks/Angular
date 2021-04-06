@@ -1,7 +1,8 @@
 <br>
 <h1>Products</h1>
 <br>
-
+<input type="text" placeholder="Enter to search" [(ngModel)]='value'>
+<input type="number" placeholder="Enter price" [(ngModel)]='pricevalue'>
 <div class="row">
     <table class="table">
         <thead>
@@ -24,7 +25,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let p of products" >
+            <tr *ngFor="let p of products| productsearch:value | mycustompipe:pricevalue" >
                 <td>   {{p.Id}} </td>
                 <td>   {{p.Title}} </td>
                 <td>   {{p.Price | currency:'INR'}} </td>
@@ -50,7 +51,7 @@
 <br>
 <br>
 <br>
-<p class="text-center" style="color: blue;">In this we have used dataservice and data is shown in table.
+<p class="text-center" style="color:grey;">In this we have used dataservice and data is shown in table.
      We use pipe in price and in date column to represent currency symbol and date.</p>
 
 <!-- <button class="btn btn-danger" (click)='generateerror()'>generate error</button> 

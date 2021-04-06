@@ -1,8 +1,49 @@
 
 <br>
 <br>
-<input type="number" placeholder="Enter price" [(ngModel)]='price' ><br><br>
-<button class="btn btn-outline-primary" (click)='setPrice()'>Set Price</button>
+<!-- <input type="number" placeholder="Enter price" [(ngModel)]='price' ><br><br>
+<button class="btn btn-outline-primary" (click)='setPrice()'>Set Price</button> -->
+
+<div class="container">
+    <div class="row">
+        <form (ngSubmit)='updateProduct()' [formGroup]='dataform' novalidate class="form">
+ 
+            <input formControlName='Id' type="number" class="form-control" />
+            <div class="alert alert-danger" *ngIf="dataform?.get('Id')?.hasError('required') && dataform?.get('Id')?.touched">
+                Required field!
+            </div>
+        
+             <input formControlName='Title' type="text" class="form-control" />
+             <div class="alert alert-danger" *ngIf="!dataform?.get('Title')?.valid && dataform?.get('Title')?.touched">
+                Password is a Required field!
+            </div>
+        
+             <input formControlName='Price' type="number" class="form-control" />
+             <div class="alert alert-danger" *ngIf="dataform?.get('Price')?.dirty && dataform?.get('Price')?.errors && dataform?.get('Price')?.errors?.priceRange">
+                Price Should be in between 0 to 500.
+            </div>
+        
+             <input formControlName='Quantity' type="number" class="form-control" />
+             <div class="alert alert-danger" *ngIf="dataform?.get('Quantity')?.dirty && dataform?.get('Quantity')?.errors && dataform?.get('Quantity')?.errors?.QuantityRange">
+                Quantity Should be in between 0 to 200
+            </div>
+        
+             <input formControlName='ExpiryDate' type="text" class="form-control" />
+        
+             <input type="text" formControlName='isInStoke' class="form-control" />
+             
+             <button type="submit" [disabled] ='dataform.invalid' class="btn btn-info">Update Product</button>
+             
+             <button type="button" class="btn btn-info">Reset</button>
+        </form>
+
+    </div>
+
+</div>
+
+
+
+
 <br>
 <br>
 <br>
@@ -14,5 +55,5 @@
 <br><br>
 <br>
 <div>
-<p class="text-center" style="color: blue;">In this we have implemented data services. we can set the price from here</p>
+<p class="text-center" style="color:grey;">In this we have implemented data services. we can set the price from here</p>
 </div>

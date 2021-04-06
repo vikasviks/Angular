@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   showDataBindingDemo=true;
   showDirectiveDemo=false;
   showproductcomponent=false;
@@ -63,4 +66,5 @@ export class AppComponent {
     this.showinput1component=true;
     this.showinput2component=true;
   }
+
 }

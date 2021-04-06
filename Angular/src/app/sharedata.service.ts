@@ -7,7 +7,7 @@ import { IProduct } from './product/Iproduct';
 })
 export class SharedataService {
 
-  product:IProduct={
+  prod:IProduct={
        Id:1,
       Title:"Pen",
       Price:20,
@@ -19,10 +19,17 @@ export class SharedataService {
   product$ : BehaviorSubject<IProduct>
   constructor() { 
 
-    this.product$=new BehaviorSubject(this.product);
+    this.product$=new BehaviorSubject(this.prod);
   }
   setPrice(price : number){
-    this.product.Price = price; 
-    this.product$.next(this.product); 
+    this.prod.Price = price; 
+    this.product$.next(this.prod); 
+  }
+
+  updateProduct(p:IProduct){
+    this.prod={
+      ...p
+    }
+    this.product$.next(this.prod)
   }
 }

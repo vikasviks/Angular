@@ -4,4 +4,6 @@
 <input type="string" placeholder="Enter Color" [(ngModel)]='color' >
 <br>
 <br>
-<div appChangeColor [color]='color'>Hello There! Please Enter Color in input filed to change the text Color</div>
+<div appChangeColor [color]='color'><h1>Hello There! Please Enter Color in input filed and Hover mouse here to change the color of this text.</h1></div>
+<br>
+<div><button appChangeColor [color]='color' class="btn btn-info"> click me </button></div>

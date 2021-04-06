@@ -1,11 +1,37 @@
 <br>
 <br>
-<div>
+<div class="text-center">
+    <table class="table table-light">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>ExpiryDate</th>
+                <th>isInstock</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>{{product.Id}}</td>
+                 <td>{{product.Title}}</td>
+                 <td>{{product.Price | currency:'INR'}}</td>
+                 <td>{{product.ExpiryDate}}</td>
+                 <td>{{product.isInstock}}</td>
+                 <td>{{product.Quantity}}</td>
+             </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<!-- <div>
     <h2>Id : {{product.Title}}</h2>
     <h2>Title : {{product.Title}}</h2>
-    <h2>Price : {{product.Price}}</h2>
+    <h2>Price : {{product.Price | currency:'INR'}}</h2>
     <h2>ExpiryDate : {{product.ExpiryDate}}</h2>
     <h2>isInstock : {{product.isInstock}}</h2>
     <h2>Quantity : {{product.Quantity}}</h2>
     
-</div>
+</div> -->
