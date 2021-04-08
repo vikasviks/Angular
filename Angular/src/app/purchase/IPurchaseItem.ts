@@ -1,9 +1,9 @@
-import { IProduct } from "../product/Iproduct";
+import { IProduct } from "../product/IProduct";
 
-export interface IPurchaseitem{
-    PurchaseId: number;
-    PurchaseName:string;
-    Purchasedate:string;
-    VendorName:string;
-    Items:IProduct[];
+export interface IPurchaseItem{
+    Pid:number,
+    Ptitle:string,
+    Pdate:string,
+    Pvendorname:string,
+    Items: IProduct[]
 }

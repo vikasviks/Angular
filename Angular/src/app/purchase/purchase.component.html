@@ -1,53 +1,44 @@
-<br>
-<div class="row">
-    <h2 class="text danger text center">Master Details</h2>
+<!-- <div class="row">
+    <h2 class="text-danger text-center">Master Details using component communication</h2>
 </div>
-<br>
-
+<hr/>
 <div class="row">
-    <div class="col-md-12">
-        <mat-accordion class="example-headers-align" >
-            <mat-expansion-panel *ngFor="let p of purchases">
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <h2>{{p.PurchaseId}}</h2>
-                    </mat-panel-title>
-                    <mat-panel-description>
-                        <h2 class="text-info">
-                            {{p.PurchaseName}}
-                        </h2>
-                    </mat-panel-description>
-                </mat-expansion-panel-header>
-
-                <app-purchase-order [PurchaseItem]='p'></app-purchase-order>
-            </mat-expansion-panel>
-        </mat-accordion>
-
-    </div>    
-
-      <!-- <table class='table'>
+    <table class="table">
         <thead class="thead-dark">
             <tr>
-                <th> Purchase Id</th>
-                <th> Purchase Name </th>
-            </tr>
+                <th>Purchase-Id</th>
+                <th>Purchase-Name</th>
+            </tr> 
         </thead>
         <tbody>
-            <tr *ngFor="let p of purchases">
-                <td>
-                    {{p. PurchaseId}}
-                </td>
-
-                <td>
-                    <button class="btn btn-link"> {{p.PurchaseName}}</button>
-                </td>
+            <tr *ngFor= "let i of Items">
+                <td>{{i.Pid}}</td>
+                <td><button class="btn btn-link">{{i.Ptitle}}</button></td>
             </tr>
         </tbody>
-    </table> -->
-    
-    <br>
+    </table>
+</div> -->
 <br>
-<br><br>
-</div>
+<h1 class="heading" >Master Details</h1>
+<br>
+<div class="col-md-12">
+    <mat-accordion class="example-headers-align" >
+        <mat-expansion-panel *ngFor="let i of Items">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <h2>{{i.Pid}}</h2>
+            </mat-panel-title>
+            <mat-panel-description>
+                <h2 class="text-info">{{i.Ptitle}}
+                </h2>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <app-purchase-order [PurchaseItem]='i'></app-purchase-order>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <br>
+    <br>
 
+
+</div>
 

@@ -1,106 +1,75 @@
+
 <div class="container">
-  <div>
-    <span>
-  
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" >
-      <a class="navbar-brand"  routerLink='/Home'>Vikas</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <!-- DataBinding -->
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-      
-          <li class="nav-item">
-            <a class="nav-link" routerLink='/Tshirt' >Data Binding</a>
-          </li>
 
-          <li class="nav-item">
-            <a class="nav-link" routerLink='/Product' >Product</a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link "  routerLink='/Purchase'>Master Details</a>
-          </li>
-    
-          <li class="nav-item">
-            <a class="nav-link"  routerLink='/attribute' >Attribute Directive</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"   routerLink='/sharedatawithservice' >Shared Data with Service</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link"   routerLink='/globalerrorhandling' >Generate Error</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"   routerLink='/login' >Login Form</a>
-          </li>
-        </ul>
-       
-      </div>
-    </nav>
-  </span>
+  <nav class="navbar navbar-expand-sm navbar-light" >
+    <a class="navbar-brand" routerLink="/home"><p class="text-dark">Vikas</p></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav" >
+      <ul class="navbar-nav ">
+        
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/Tshirt"><p class="text-dark">Data Binding</p></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/Products"><p class="text-dark">Product</p><span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/Purchase"><p class="text-dark">Master Details</p></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/Sharedata"><p class="text-dark">Shared Data</p></a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/Attributedirective"><p class="text-dark">Attribute Directive</p></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/HandelError"><p class="text-dark">Handle Error</p></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/LoginForm"><p class="text-dark">Reactive Form</p></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/rxjsdemo"><p class="text-dark">Rxjs Services</p></a>
+        </li>
+      </ul>
     </div>
-    <router-outlet></router-outlet>
+  </nav>
+  <router-outlet></router-outlet>
 </div>
-
-
-<!-- <div class="container"> -->
-
-<!-- <button class="btn btn-info" style="margin-left: 450px; margin-top: 10px; margin-bottom: 50px;">Master Details</button> -->
-
-  <!-- <div class="row">
-    <div class="col-md-3">
-      <button routerLink='/Tshirt' class="btn btn-danger"> Data Binding demo</button>
+    <!-- <div class="col-md-3"> -->
+<!-- <button (click)='showdbDemo()' class="btn btn-danger">Data binding demo</button>
     </div>
 
-    
-      <div class="col-md-3">
-        <button routerLink='/Product'  class="btn btn-warning"> Product data</button>
+    <div class="col-md-3" class="warning">
+      <button (click)='showDirectiveDemo()' class="btn btn-warning" >Structural directive Demo</button>
+    </div> 
+
+  <div class="col-md-3" class="danger">
+    <button (click)='showProducts()' class="btn btn-danger" >Products List</button>
+  </div>
+  
+
+  <div class="col-md-3" class="infowarning">
+    <button (click)=' ShowMasterDetails()' class="btn btn-info" >MasterDetails</button>
+  </div> 
+  <div class="col-md-3" class="iinfowarning">
+    <button (click)= 'ShowdataService()' class="btn btn-info">Show Data Service</button>
+  </div> -->
+
+  <!-- <div  class="row">
+    <div class="col-md-12">
+      <app-tshirtdatabinding *ngIf="ShowDataBindingDemo"></app-tshirtdatabinding>
+        <app-hello *ngIf="ShowDirectiveDemo"></app-hello>
+        <app-product *ngIf="showProductsTable"></app-product>
+        <app-purchase *ngIf="showMasterDetails"></app-purchase>
+         <button routerLink="/home">Vikas kumar</button>
+          <button routerLink="/Products">Products</button>
+          <button routerLink="/Tshirt">Tshirt</button>
+          <button routerLink="/Purchase">Purchase</button>
+          <button routerLink="/Attributedirective">Sharedata</button>
+       </div>
       </div>
-      
-
-    
-    <div class="col-md-3">
-      <button routerLink='/attribute'   class="btn btn-warning"> Attribute Directive demo</button>
-    </div>
-
-    <div class="col-md-3">
-      <button  routerLink='/Purchase'   class="btn btn-info"> master details</button>
-    </div>
-
-
-     <div class="col-md-3">
-      <button routerLink='/sharedatawithservice' class="btn btn-warning"> Share data</button>
-    </div>  -->
-
-    <!-- <div class="col-md-3">
-      <button  (click)='showpurchaseorderdemo()'  class="btn btn-warning"> Purchase-order</button>
-    </div> -->
-
-
-  <!-- </div>
-
-  <hr> -->
-
-
-  <!-- <div class="row">
-    <div class="col-md-12"> -->
-
-    <!-- <app-tshirtdatabinding *ngIf="showDataBindingDemo"></app-tshirtdatabinding>
-<app-structuredirective *ngIf="showDirectiveDemo"></app-structuredirective>
-<app-product *ngIf="showproductcomponent"></app-product>
-<app-purchase *ngIf=" showpurchasecomponent"></app-purchase>  -->
-<!-- <app-purchase-order *ngIf=" showpurchaseordercomponent"></app-purchase-order> -->
-
-<!-- 
-<app-input1 *ngif="showinput1component"></app-input1>
-<app-input2 *ngif="showinput2component"></app-input2> -->
-
-
-  <!-- </div>
-</div> -->
-<!-- </div> -->
+     -->

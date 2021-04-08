@@ -1,9 +1,15 @@
-<br>
-<h1>Attribute Directive works</h1>
-<br>
-<input type="string" placeholder="Enter Color" [(ngModel)]='color' >
+<!-- <p>attributedirective works!</p>x -->
 <br>
 <br>
-<div appChangeColor [color]='color'><h1>Hello There! Please Enter Color in input filed and Hover mouse here to change the color of this text.</h1></div>
+<h1 class="heading">Attribute Directive</h1>
 <br>
-<div><button appChangeColor [color]='color' class="btn btn-info"> click me </button></div>
+<div class="over">
+    <input type="text" placeholder="Enter Color" [(ngModel)]='c'/>
+    <br>
+    <br>
+    
+    <br>
+    <div appChangecolor [color]= 'c'><h2>Move your cursor over here to change the text color.</h2></div>
+</div>
+    <br>
+<br>

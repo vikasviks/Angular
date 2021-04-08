@@ -1,11 +1,21 @@
 <br>
-<h1>Products</h1>
 <br>
-<input type="text" placeholder="Enter to search" [(ngModel)]='value'>
-<input type="number" placeholder="Enter price" [(ngModel)]='pricevalue'>
 <div class="row">
+    <div class="col-md-4">
+        Enter Title: <input type="text" [(ngModel)]="data" placeholder="Search">
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        Enter price: <input type="number" [(ngModel)]="price" placeholder="Filter Price">
+    </div>
+</div>
+<br>
+<br>
+<h1 class="heading">HTML Table</h1>
+<br>
+<div class="col-md-12">
     <table class="table">
-        <thead>
+        <thead class="tablehead">
             <tr>
                 <th>
                     Id
@@ -17,44 +27,74 @@
                     Price
                 </th>
                 <th>
-                    Expiry Date
+                    ExpiryDate
                 </th>
                 <th>
                     Quantity
                 </th>
+                <th>
+                    Instock
+                </th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let p of products| productsearch:value | mycustompipe:pricevalue" >
-                <td>   {{p.Id}} </td>
-                <td>   {{p.Title}} </td>
-                <td>   {{p.Price | currency:'INR'}} </td>
-                <td>   {{p.ExpiryDate | date}} </td>
-                <td>   {{p.Quantity}} </td>
-                <td> 
-                       <ng-container *ngIf="p.isInstock; then instock else outofstock"></ng-container>
-                       <ng-template #instock>
-                        <i class="fa fa-check" aria-hidden="true"></i>
-                       </ng-template> 
+            <tr *ngFor="let p of products | custompipe1:data |price:price">
+                <td>{{p.Id}}</td>
+                <td>{{p.Title}}</td>
+                <td>{{p.Price | currency :'INR'}}</td>
+                <td>{{p.ExpiryDate}}</td>
+                <td>{{p.Quantity}}</td>
+                <td>
 
-                       <ng-template #outofstock>
+                    <ng-container *ngIf="p.inStock; then instock else outofStock">
+                    </ng-container>
+
+                    <ng-template #instock>
+                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    </ng-template>
+                    <ng-template #outofStock>
                         <i class="fa fa-times" aria-hidden="true"></i>
-                        <button class="btn btn-default"> Order Now</button>
-                       </ng-template> 
+                        <button class="btn btn-default">Order Now</button>
+                    </ng-template>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
 <br>
+<h1 class="heading">Angular Table</h1>
+<hr>
+<br>
+<div class="col-md-12">
+    <table mat-table [dataSource]="products">
+        <ng-container matColumnDef="ID">
+            <th mat-header-cell *matHeaderCellDef id="angularheading"> ID </th>
+            <td mat-cell *matCellDef="let user"> {{user.Id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="TITLE">
+            <th mat-header-cell *matHeaderCellDef id="angularheading"> TITLE </th>
+            <td mat-cell *matCellDef="let user"> {{user.Title}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Price">
+            <th mat-header-cell *matHeaderCellDef id="angularheading"> Price </th>
+            <td mat-cell *matCellDef="let user"> {{user.Price}} </td>
+        </ng-container>
+        <ng-container matColumnDef="ExpiryDate">
+            <th mat-header-cell *matHeaderCellDef id="angularheading"> ExpiryDate </th>
+            <td mat-cell *matCellDef="let user"> {{user.ExpiryDate}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Quantity">
+            <th mat-header-cell *matHeaderCellDef id="angularheading"> Quantity </th>
+            <td mat-cell *matCellDef="let user"> {{user.Quantity}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
 <br>
 <br>
-<br>
-<br>
-<p class="text-center" style="color:grey;">In this we have used dataservice and data is shown in table.
-     We use pipe in price and in date column to represent currency symbol and date.</p>
-
-<!-- <button class="btn btn-danger" (click)='generateerror()'>generate error</button> 
-<p>attribute directive works</p>
-<input type="text" [(ngModel)]='color'>
-<div appChangeColor [color]='color'>Hello world</div> -->
+<div class="footer">
+    <p>
+        In this we used a dataservice.
+    </p>
+</div>

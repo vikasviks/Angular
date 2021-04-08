@@ -1,0 +1,13 @@
+
+.footer{
+    text-align: center;
+    color:grey;
+    padding-bottom: 20px;
+    bottom: 0;
+    display: block;
+    margin-left: 20px;
+}
+.heading{
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+}

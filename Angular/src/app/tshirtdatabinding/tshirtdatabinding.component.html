@@ -1,50 +1,29 @@
-<div class="container">
-
-  <h1 class="text-center">{{title}}</h1> <br>
-
-  <div class="row">
-    <div class="col-md-3">
-    </div>
-
-    <div class="col-md-3">
-      <input type="numberod" [(ngModel)]=a><br><br>
-    </div>
-
-    <div class="col-md-4">
-      <input type="number" [(ngModel)]=b><br><br>
-    </div>
-
-    <div class="col-md-2">
-    </div>
-
+<br>
+<h1 class="heading">Choose Tshirt</h1>
+<div class="col-md-4" >
+<input type="number" placeholder="height" class="class"[(ngModel)]=h>
   </div>
-
-  <hr>
-  <br>
-
-  <div class="row">
-    <div class="col=md-4">
-    </div>
-
+  <div class="col-md-4">
+    <input type="number" placeholder="width" class="class"[(ngModel)]=w>
   </div>
-
-<div class="text-center">
-  <div class="col=md-4" >
-    <img (mouseenter)="changefront()" [src]='imgsource' (mouseleave)="changeback()" [style.width.px]='a'
-      [style.height.px]='b' style="height: 300px;  width: 300px;">
-
-      <br>
-      <br>
-      <div class="text-center">
-      <button class="btn btn-info" (click)='setDefault()' >Default Size</button>
-      </div>
+  <div class="col-md-2">
+    
   </div>
+  
+<hr>
+<div class="row">
+<div class="col-md-4">
 </div>
-
+<div class="col-md-4">
+  <img (mouseenter)='ChangeTshirtMouseEnter()' (mouseleave)='ChangeTshirtMouseExit()'
+  [src]='imgSource' [style.height.px]='h' [style.width.px]='w'
+  class="img img-fluid"/>
+</div>
 </div>
 <br>
 <br>
-
-<p class="text-center" style="color:grey;">In This example we implemented Data Binding, we have provided two input fields to set height and width of an image <br>
-  by changeing the values, the size of image will change respectively, and when we hover mouse on image, back of t-shirt image can be seen.
-</p>
+<div class="footer">
+  <p class="text-center" style="color:grey;">In This example we implemented Data Binding, we have provided two input fields to set height and width of an image <br>
+    by changeing the values, the size of image will change respectively, and when we hover mouse on image, back of t-shirt image can be seen.
+  </p>
+</div>

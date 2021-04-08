@@ -1,0 +1,36 @@
+<br>
+<br>
+<table class="table">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                ExpiryDate
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Instock
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        
+            <td>{{product.Id}}</td>
+            <td>{{product.Title}}</td>
+            <td>{{product.Price | currency :'INR'}}</td>
+            <td>{{product.ExpiryDate |date}}</td>
+            <td>{{product.Quantity}}</td>
+            <td>{{product.inStock}}</td>
+        
+    </tbody>
+</table>

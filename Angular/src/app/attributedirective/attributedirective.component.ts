@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./attributedirective.component.css']
 })
 export class AttributedirectiveComponent implements OnInit {
-  color='';
-  constructor() { }
 
+  constructor() { }
+  c:string="";
   ngOnInit(): void {
   }
 

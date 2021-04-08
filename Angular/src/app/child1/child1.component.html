@@ -1,0 +1,82 @@
+<!-- <div class="col-md-4">
+    <input type="number" [(ngModel)]='price'>
+</div> -->
+
+<!-- <div >
+    <button class="btn btn-info" id="setprice" (click)="setPrice()">Set Price</button>
+</div> -->
+<br>
+<div class="row">
+    <form (ngSubmit)='updateProduct()' [formGroup]='ProductEditForm' novalidate class="form">
+      <div class="form-group">
+        <label>ID</label>
+        <input formControlName='Id' type="number" class="form-control"/>
+        <div class="alert alert-danger" *ngIf="!ProductEditForm?.get('Id')?.valid && ProductEditForm?.get('Id')?.touched ">
+          ID is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Title</label>
+        <input formControlName='Title' type="text" class="form-control"/>
+        <div class="alert alert-danger" *ngIf="!ProductEditForm?.get('Title')?.valid && ProductEditForm?.get('Title')?.touched">
+          Title is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Price</label>
+        <input formControlName='Price' type="number" class="form-control"/>
+        <div class="alert alert-danger" *ngIf="!ProductEditForm?.get('Price')?.valid && ProductEditForm?.get('Price')?.touched && ProductEditForm?.get('Price')?.errors?.priceRangeError">
+          Price should be in between {{min}} and {{max}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label> Quantity</label>
+        <input formControlName='Quantity' type="number" class="form-control"/>
+        <div class="alert alert-danger" *ngIf="!ProductEditForm?.get('Quantity')?.valid && ProductEditForm?.get('Quantity')?.touched">
+          Quantity is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label>ExpiryDate</label>
+        <input formControlName='ExpiryDate' type="text" class="form-control"/>
+        <div class="alert alert-danger" *ngIf="!ProductEditForm?.get('ExpiryDate')?.valid && ProductEditForm?.get('ExpiryDate')?.touched">
+          Expiry Date is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label>inStock</label>
+        <input formControlName='inStock' type="boolean" class="form-control"/>
+      </div>
+      <button type="submit" [disabled]="ProductEditForm.invalid" class="btn btn-info">Update</button>
+<button type="button" (click)='reset()' class="btn btn-danger">Reset</button>
+<br>
+</form>
+</div>
+      
+  <!-- <input formControlName='email' type="text" class="form-control" placeholder="Enter email"/>
+  < <div class="alert alert-danger" *ngIf="loginForm?.get('email')?.hasError('required') && loginForm?.get('email')?.touched">
+    Email is required
+  </div> -->
+  <!-- <input formControlName='password' type="password" class="form-control"  placeholder="Password"> -->
+  <!-- <div class="alert alert-danger" *ngIf="!loginForm?.get('password')?.valid && loginForm?.get('password')?.touched">
+    Password is required
+    </div> -->
+    <!-- <input formControlName='age' type="number" class="form-control"  placeholder="Age"> -->
+    <!-- <div class="alert alert-danger" *ngIf="loginForm?.get('age')?.dirty && loginForm?.get('age')?.errors && loginForm?.get('age')">
+      Age should be between 30 and 70
+    </div> -->
+    <!-- <input formControlName='phoneNumber' type="text" class="form-control"  placeholder="Phone"> --> 
+    <!-- <div class="alert alert-danger" *ngIf="loginForm?.get('phoneNumber')?.hasError('required') && loginForm?.get('phoneNumber')?.touched">
+        Phone is required
+      </div> -->
+    <!-- <label class="control-label">Send Notification</label>
+    <br/>
+    <label class="radio-inline">
+        <input type="radio" value="email" formControlName="notification">Email
+    </label>
+    <label class="radio-inline">
+        <input type="radio" value="phone" formControlName="notification">Phone
+    </label> -->
+  
+
+

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-tshirtdatabinding',
   templateUrl: './tshirtdatabinding.component.html',
@@ -10,35 +9,28 @@ export class TshirtdatabindingComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
+  errorVar:any=undefined;
+  GenerateError():void{
+    this.errorVar.sort();
+  }
+  title="Choose T-shirt";
 
-  title = 'T-shirt';
+  h=350;
+  w=350;
+  imgSource='../assets/front.jpg';
 
-  a=350;
-  b=350;
-  imgsource= "../assets/front.jpg"
-
-  setWidth():void
+  ChangeTshirtMouseEnter():void
   {
-    this.a=300;
-    this.b=300;
+    this.imgSource='../assets/back.jpg';
   }
-
-  setDefault():void
+  ChangeTshirtMouseExit():void
   {
-    this.a=300;
-    this.b=300;
+    this.imgSource='../assets/front.jpg';
   }
-
-  changefront():void
-  {
-    this.imgsource="../assets/back.jpg"
+  setWidth():void{
+    this.h=100;
+    this.w=100;
   }
-
-  changeback():void
-  {
-    this.imgsource="../assets/front.jpg"
-  }
-  
-
 }

@@ -1,70 +1,59 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component } from '@angular/core';
-
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  title(title: any) {
-    throw new Error('Method not implemented.');
+  title:'Angular-Demo';
+  ShowDataBindingDemo=true;
+  ShowDirectiveDemo=false;
+  showProductsTable=false;
+  showMasterDetails=false;
+  showchild1compo=false;
+  showchild2compo=false;
+  showdbDemo():void{
+    this.ShowDataBindingDemo=true;
+    this.ShowDirectiveDemo=false;
+    this.showProductsTable=false;
+    this.showMasterDetails=false;
+    this.showchild1compo=false;
+    this.showchild2compo=false;
   }
-  showDataBindingDemo=true;
-  showDirectiveDemo=false;
-  showproductcomponent=false;
-  showpurchasecomponent=false;
-  showinput1component=false;
-  showinput2component=false;
-
-  showdbdemo():void
-  {
-    this.showDataBindingDemo=true;
-    this.showproductcomponent=false;
-    this.showDirectiveDemo=false;
-    this.showinput1component=false;
-    this.showinput2component=false;
-    this.showpurchasecomponent=false;
+  showDirectiveDemo():void{
+    this.ShowDataBindingDemo=false;
+    this.ShowDirectiveDemo=true;
+    this.showProductsTable=false;
+    this.showMasterDetails=false;
+    this.showchild1compo=false;
+    this.showchild2compo=false;
   }
-
-  showProduct():void{
-    this.showDataBindingDemo=false;
-    this.showproductcomponent=true;
-    this.showDirectiveDemo=false;
-    this.showpurchasecomponent=false;
-    this.showinput1component=false;
-    this.showinput2component=false;
+  showProducts():void{
+    this.showProductsTable=true;
+    this.ShowDataBindingDemo=false;
+    this.ShowDirectiveDemo=false;
+    this.showMasterDetails=false;
+    this.showchild1compo=false;
+    this.showchild2compo=false;
   }
-
-  showdirectivedemo():void{
-    this.showDataBindingDemo=false;
-    this.showDirectiveDemo=true;
-    this.showproductcomponent=false;
-    this.showpurchasecomponent=false;
-    this.showinput1component=false;
-    this.showinput2component=false;
-
+  ShowMasterDetails():void{
+    this.showProductsTable=false;
+    this.ShowDataBindingDemo=false;
+    this.ShowDirectiveDemo=false;
+    this.showMasterDetails=true;
+    this.showchild1compo=false;
+    this.showchild2compo=false;
   }
-
-  showpurchasedemo(): void
-  {
-    this.showpurchasecomponent=true;
-    this.showDataBindingDemo=false;
-    this.showDirectiveDemo=false;
-    this.showproductcomponent=false;
-    this.showinput1component=false;
-    this.showinput2component=false;
-
+  ShowdataService():void{
+    this.ShowDataBindingDemo=false;
+    this.ShowDirectiveDemo=false;
+    this.showMasterDetails=false;
+    this.showProductsTable=false;
+    this.showchild1compo=true;
+    this.showchild2compo=true;
   }
-
-  showinputdata():void
-  {
-    this.showpurchasecomponent=false;
-    this.showDataBindingDemo=false;
-    this.showDirectiveDemo=false;
-    this.showproductcomponent=false;
-    this.showinput1component=true;
-    this.showinput2component=true;
-  }
-
+  
 }
